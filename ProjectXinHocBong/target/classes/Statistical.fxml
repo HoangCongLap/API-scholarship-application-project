@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="507.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="xinhocbong.function.StatisticalController">
+   <children>
+      <AnchorPane layoutY="38.0" prefHeight="473.0" prefWidth="222.0" style="-fx-background-color: #C0C0C0;">
+         <children>
+            <Button fx:id="exitStatistical" layoutY="445.0" mnemonicParsing="false" onAction="#exitStatisticalAction" prefHeight="28.0" prefWidth="88.0" text="Back">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="info" layoutX="19.0" layoutY="206.0" mnemonicParsing="false" onAction="#infoAction" prefHeight="30.0" prefWidth="186.0" text="Student Information">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="info1" layoutX="18.0" layoutY="141.0" mnemonicParsing="false" onAction="#infoActionRecivedSholar" prefHeight="30.0" prefWidth="193.0" text="Student Received Scholarship">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="17.0" layoutY="274.0" mnemonicParsing="false" onAction="#addAction" prefHeight="30.0" prefWidth="186.0" text="Add Student">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="20.0" layoutY="340.0" mnemonicParsing="false" onAction="#addOrganizationAction" prefHeight="30.0" prefWidth="186.0" text="Add Organization">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="28.0" prefWidth="222.0" style="-fx-background-color: #0000FF;" text="MENU FUNCTION">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table_users" layoutX="222.0" layoutY="39.0" prefHeight="466.0" prefWidth="576.0">
+        <columns>
+          <TableColumn fx:id="col_Mssv" prefWidth="154.3999786376953" text="MSSV" />
+          <TableColumn fx:id="col_Name" prefWidth="256.0" text="NAME" />
+            <TableColumn fx:id="col_BrithDate" prefWidth="164.800048828125" text="BRITH DATE" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="57.0" prefHeight="39.0" prefWidth="741.0" style="-fx-background-color: #00FFFF;" text="STATISTICAL">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="39.0" fitWidth="62.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/IG1.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="keyWordTextFieldStatistical" alignment="TOP_LEFT" layoutX="599.0" layoutY="13.0" onAction="#searchUserStatistical" prefHeight="26.0" prefWidth="200.0" promptText="Search student....." />
+      <Label layoutX="547.0" layoutY="16.0" text="Search:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

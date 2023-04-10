@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="xinhocbong.function.MenuController">
+    <children>
+      <Button fx:id="btBackLogin" layoutX="-3.0" layoutY="372.0" mnemonicParsing="false" onAction="#backLogin" style="-fx-background-color: #4682B4;" text="Back Login">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="Add" layoutX="52.0" layoutY="163.0" mnemonicParsing="false" onAction="#addAction" prefHeight="95.0" prefWidth="124.0" text="ADD">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="Update" layoutX="238.0" layoutY="163.0" mnemonicParsing="false" onAction="#upDateAction" prefHeight="95.0" prefWidth="124.0" text="UPDATE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="Statistical" layoutX="426.0" layoutY="163.0" mnemonicParsing="false" onAction="#statisticalAction" prefHeight="95.0" prefWidth="124.0" text="STATISTICAL">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Label alignment="CENTER" layoutX="100.0" layoutY="-3.0" prefHeight="70.0" prefWidth="502.0" style="-fx-background-color: #00FFFF;" text="MENU FUNCTION">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="70.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/IG1.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

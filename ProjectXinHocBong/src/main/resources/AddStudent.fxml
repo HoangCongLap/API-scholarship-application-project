@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="519.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="xinhocbong.function.AddStudentController">
+   <children>
+      <Pane layoutY="-4.0" prefHeight="541.0" prefWidth="602.0">
+         <children>
+            <Label alignment="CENTER" layoutX="-3.0" layoutY="4.0" prefHeight="53.0" prefWidth="609.0" style="-fx-background-color: #00FFFF;" text="ADD STUDENTS">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+      
+                  <Label layoutX="70.0" layoutY="111.0" text="ID:">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="70.0" layoutY="160.0" text="NAME:">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="68.0" layoutY="215.0" text="GENDER:">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="68.0" layoutY="273.0" text="BRITHDATE:">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="70.0" layoutY="385.0" text="FAMILY SITUATION:">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="67.0" layoutY="324.0" text="OVERALL SCORE:">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_mssv" layoutX="240.0" layoutY="106.0" prefHeight="30.0" prefWidth="274.0" promptText="Please insert the ID" />
+            <TextField fx:id="txt_name" layoutX="240.0" layoutY="156.0" prefHeight="30.0" prefWidth="274.0" promptText="Please insert the Name" />
+            <TextField fx:id="txt_hoanCanh" layoutX="240.0" layoutY="381.0" prefHeight="30.0" prefWidth="274.0" promptText="Please insert the FAMILY SITUATION" />
+            <TextField fx:id="txt_diem" layoutX="240.0" layoutY="320.0" prefHeight="30.0" prefWidth="274.0" promptText="Please insert the OVERALL SCORE" />
+            <Button fx:id="addSinhVien" layoutX="250.0" layoutY="455.0" mnemonicParsing="false" onAction="#Add_student" prefHeight="25.0" prefWidth="140.0" text="ADD">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="exitAdd" layoutX="423.0" layoutY="455.0" mnemonicParsing="false" onAction="#exitAddStudent" prefHeight="25.0" prefWidth="140.0" text="BACK">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="combobox_gioiTinh" layoutX="240.0" layoutY="211.0" prefHeight="30.0" prefWidth="274.0" promptText="Choose a gender" />
+            <DatePicker fx:id="DatePicker_ngaySinh" layoutX="240.0" layoutY="268.0" prefHeight="30.0" prefWidth="274.0" promptText="Choose a date" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
