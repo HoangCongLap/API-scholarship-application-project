@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.scholarship.restservice.entites.*;
 import com.scholarship.restservice.jpadatabase.LoginUserRepository;
 import com.scholarship.restservice.jpadatabase.OrganizetionRepository;
@@ -33,16 +34,19 @@ public class ServiceController {
 
 
     //    Login API
+    //usename=lap;
+    //password=123;
     @GetMapping("/login")
     public LoginResponse login(@RequestParam(value = "username") String userName,
                                @RequestParam(value = "password") String passWord) {
-        String hashPassword= HashPassword.hash(passWord);
+        String hashPassword = HashPassword.hash(passWord);
         LoginUser byUsename = loginUserRepository.findByUsename(userName);
         boolean isLoginSuccess = false;
+//        kiểm tra password đã được mã hóa
         if (byUsename.getPassword().equals(hashPassword)) {
             isLoginSuccess = true;
         }
-        System.out.printf("Call API /login:  username: %s, password: %s, isLoginSuccess: %s\n", userName, "***", isLoginSuccess);
+        System.out.printf("Call API /login :  username: %s, password: %s, isLoginSuccess: %s\n", userName, "***", isLoginSuccess);
         return new LoginResponse(isLoginSuccess, userName);
     }
 
@@ -52,10 +56,10 @@ public class ServiceController {
                                     @RequestParam(value = "password") String passWord) {
         LoginUser loginUser = new LoginUser();
         loginUser.setUsename(userName);
-        String hashPassword= HashPassword.hash(passWord);
+//        Mã hóa passwoerd(encrypt pass)
+        String hashPassword = HashPassword.hash(passWord);
         loginUser.setPassword(hashPassword);
         loginUserRepository.save(loginUser);
-
         System.out.printf("Call API /setdataaddsignup to list result: %s \n", GSON.toJson(loginUser));
         return "";
     }
@@ -73,7 +77,7 @@ public class ServiceController {
             result.add(user);
 
         }
-        System.out.printf("Call API/getdataallscholarshipusers to list the resulting length: %s,%s \n", result.size(), GSON.toJson(result));
+        System.out.printf("Call API /getdataallscholarshipusers to list the resulting length: %s,%s \n", result.size(), GSON.toJson(result));
         return result;
     }
 
@@ -87,6 +91,7 @@ public class ServiceController {
         for (Student student : students) {
             boolean isFound = false;
             for (Scholarship scholarship : all) {
+//                kiểm tra điều kiện có học sinh nào không
                 if (scholarship.getStudent().getIDMSSV().equals(student.getIDMSSV())) {
                     User user = new User(Float.parseFloat(student.getOVERALLSCORE()), student.getIDMSSV(), student.getNAME(),
                             student.getGENDER(), student.getBRITHDATE(), student.getFAMILYSITUATION(), scholarship.getId(),
@@ -97,6 +102,7 @@ public class ServiceController {
                     break;
                 }
             }
+
             if (!isFound) {
                 User user = new User(Float.parseFloat(student.getOVERALLSCORE()), student.getIDMSSV(),
                         student.getNAME(), student.getGENDER(), student.getBRITHDATE(),
@@ -105,7 +111,7 @@ public class ServiceController {
                 result.add(user);
             }
         }
-
+//        System.out.printf("Call API /getdataallusers to list the resulting length: %s,%s \n", result.size(), result.toString());
         System.out.printf("Call API /getdataallusers to list the resulting length: %s,%s \n", result.size(), GSON.toJson(result));
         return result;
     }
@@ -127,12 +133,12 @@ public class ServiceController {
         student.setFAMILYSITUATION(familySituation);
         studentRepsitory.save(student);
 
-        System.out.printf("Call API /getdataallscholarshipusers  list result: %s \n", GSON.toJson(student));
+        System.out.printf("Call API /setdataaddstudent to list result: %s \n", GSON.toJson(student));
         return "";
     }
 
 
-    //    Set dât add organization
+    //    Set data add organization
     @GetMapping("/setdataaddorganization")
     public String saveDataOrganization(@RequestParam(value = "id") String id,
                                        @RequestParam(value = "tenToChuc") String tenToChuc) {
@@ -141,11 +147,11 @@ public class ServiceController {
         organizetion.setTENTOCHUC(tenToChuc);
         organizetionRepository.save(organizetion);
 
-        System.out.printf("Call API /getdataallscholarshipusers  to list the resulting: %s \n", GSON.toJson(organizetion));
+        System.out.printf("Call API /setdataaddorganization to list the resulting: %s \n", GSON.toJson(organizetion));
         return "";
     }
 
-    //    Set data add users (student form)
+    //    updata data add users (student form)
     @GetMapping("/updatedataaaddusers")
     public String updateDataAddUsers(@RequestParam(value = "IDHocBong") String idHocBong,
                                      @RequestParam(value = "IDToChuc") String idToChuc,
@@ -168,11 +174,11 @@ public class ServiceController {
             scholarshipRepository.save(scholarship);
         }
 
-        System.out.printf("Call API /updatedataaaddusers  list result: %s \n", GSON.toJson(scholarship));
+        System.out.printf("Call API /updatedataaaddusers list result: %s \n", GSON.toJson(scholarship));
         return "";
     }
 
-    //    Set data add users (student form)
+    //    create data add users (student form)
     @GetMapping("/createdataaaddusers")
     public String createDataAddUsers(@RequestParam(value = "IDSinhVien") String idSinhVien,
                                      @RequestParam(value = "IDToChuc") String idToChuc,
@@ -189,7 +195,7 @@ public class ServiceController {
             scholarship.setSOTIEN(SOTIEN);
             scholarshipRepository.save(scholarship);
         }
-        System.out.printf("Call API /createdataaaddusers  list result: %s \n", GSON.toJson(scholarship));
+        System.out.printf("Call API /createdataaaddusers list result: %s \n", GSON.toJson(scholarship));
 
         return "";
     }

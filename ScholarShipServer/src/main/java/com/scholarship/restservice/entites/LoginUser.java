@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Entity(name = "taikhoan")
+@Entity(name = "TAIKHOAN")
 @Data
 public class LoginUser {
     @Id

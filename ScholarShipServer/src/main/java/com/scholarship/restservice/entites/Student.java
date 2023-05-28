@@ -3,7 +3,7 @@ package com.scholarship.restservice.entites;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity(name = "sinhvien")
+@Entity(name = "SINHVIEN")
 @Data
 public class Student {
     @Id

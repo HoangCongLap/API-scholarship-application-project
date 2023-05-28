@@ -7,7 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import java.sql.Date;
 
-@Entity(name = "thongtinhocbong")
+@Entity(name = "THONGTINHOCBONG")
 @Data
 public class Scholarship {
     @Id
