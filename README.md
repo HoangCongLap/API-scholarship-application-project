@@ -17,7 +17,7 @@
 
 #### 3.1 sơ đồ logic
 
-![example](img/logicDiagram.png)
+![example](img/logicDiagram.PNG)
 
 #### 3.1 sơ đồ chức năng hệ thống
 
