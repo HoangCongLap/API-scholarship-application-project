@@ -84,4 +84,4 @@
 
 ## 6. Video
 
-{@youtube: https://www.youtube.com/watch?v=sn8Ni8xTiCA}
+Youtube: https://www.youtube.com/watch?v=sn8Ni8xTiCA
