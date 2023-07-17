@@ -81,3 +81,7 @@
 
 - Chương trình đã được hoàn thiện hầu hết các chức năng
 - Cần cải thiện hiệu năng của chương trình để phù hợp với thực tiễn.
+
+## 6. Video
+
+{@youtube: https://www.youtube.com/watch?v=sn8Ni8xTiCA}

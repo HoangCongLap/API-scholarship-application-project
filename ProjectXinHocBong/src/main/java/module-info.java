@@ -5,6 +5,7 @@ module com.example.XinHocBong {
     requires java.desktop;
     requires lombok;
     requires com.google.gson;
+    requires javafx.graphics;
     opens xinhocbong.api.entites to com.google.gson;
     opens xinhocbong.users to com.google.gson, javafx.fxml;
     opens xinhocbong to javafx.fxml;

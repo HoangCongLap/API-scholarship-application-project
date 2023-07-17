@@ -100,7 +100,7 @@ public class StudentsViewController implements Initializable {
         col_NgayNhan.setCellValueFactory(new PropertyValueFactory<User, String>("ngayNhan"));
         col_SoTien.setCellValueFactory(new PropertyValueFactory<User, String>("soTien"));
         col_TenToChuc.setCellValueFactory(new PropertyValueFactory<User, String>("tenToChuc"));
-//        dataList = FXCollections.observableArrayList(AllStudentInformationApi.getDataAllUsers());
+//        dataList = MysqlAllStudentInformation.getDataAllUsers();
         dataList =FXCollections.observableArrayList(AllStudentInformationApi.getDataAllUsers());
         tableV_inforAca.setItems(dataList);
         search_user();

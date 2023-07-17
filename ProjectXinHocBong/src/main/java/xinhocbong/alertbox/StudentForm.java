@@ -50,6 +50,7 @@ public class StudentForm {
             date = LocalDate.parse(user.getNgayNhan(), formatter);
         }
         ReceivedDate.setValue(date);
+        //???????
         textFieldMoney.setText(user.getSoTien());
 
         ObservableList<Organizetion> orranizetions = MysqlOrganizetion.getOrranizetions();
